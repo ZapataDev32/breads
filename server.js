@@ -6,6 +6,18 @@ const PORT = process.env.PORT
 const app = express()
 // DEPENDENCIES
 const methodOverride = require('method-override')
+const mongoose = require('mongoose')
+const MONGO_URI = process.env.MONGO_URI
+
+
+mongoose
+    .connect(MONGO_URI)
+    .then(() => {
+        console.log('connected to mongo: ' + MONGO_URI);
+    })
+    .catch((err) => {
+        console.log('Error connecting to mongo: ' + err);
+    });
 
 
 // MIDDLEWARE
