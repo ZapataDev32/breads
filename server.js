@@ -46,8 +46,13 @@ app.listen(PORT, () => {
     console.log('listening on port', PORT);
 })
 
+// bakers 
+const bakersController = require('./controllers/bakers_controller.js')
+app.use('/bakers', bakersController)
+
 // 404 Page
 app.get('*', (req, res) => {
-    res.send('404')
-  })
+  res.send('404')
+})
+
   
