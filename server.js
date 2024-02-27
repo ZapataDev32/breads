@@ -55,4 +55,5 @@ app.get('*', (req, res) => {
   res.send('404')
 })
 
-  
+
+module.exports = app;
